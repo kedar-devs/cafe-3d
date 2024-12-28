@@ -43,7 +43,7 @@ export const indianFood = [
   
   export const mexicanFood = [
     {
-      imgUrl: "/tacos-min.jpg",
+      imgUrl: "/taco-min.jpg",
       name: "Tacos",
       price: 150,
       quantity: 12,
@@ -51,7 +51,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/burrito-min.jpg",
+      imgUrl: "/burito-min.jpg",
       name: "Burrito",
       price: 200,
       quantity: 10,
