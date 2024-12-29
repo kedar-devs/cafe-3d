@@ -5,20 +5,24 @@ import * as THREE from'three'
 type cameraType={
     cameraPosition:[number,number,number]
     cameraRotation:[number,number,number]
+    cameraLookAt:[number,number,number]
 }
 
-function CameraControl({cameraPosition,cameraRotation}:cameraType) {
+function CameraControl({cameraPosition,cameraRotation,cameraLookAt}:cameraType) {
     const {camera}=useThree()
     const targetPosRef = useRef(new THREE.Vector3(...cameraPosition));
     const targetRotRef = useRef(new THREE.Euler(...cameraRotation));
+    // const targetLookAtRef=useRef(cameraLookAt)
     useEffect(()=>{
         targetPosRef.current.set(...cameraPosition);
         targetRotRef.current.set(...cameraRotation);
-    },[...cameraPosition,...cameraRotation])
+        // targetLookAtRef.current.set(...cameraLookAt)
+    },[...cameraPosition,...cameraRotation,...cameraLookAt])
     useFrame(() => {
         console.log("Camera Position:", camera.position);
         console.log("Camera Rotation:", camera.rotation);
         camera.position.lerp(targetPosRef.current, 0.1);
+        camera.lookAt(...cameraLookAt)
         // camera.lookAt(-3,3,20)
 
     // Smoothly interpolate rotation

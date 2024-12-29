@@ -1,60 +1,108 @@
 import { Html } from "@react-three/drei"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import FoodCard from "./food-card";
-import { americanFood, chineseFood, indianFood, italianFood, mexicanFood } from "./food-option";
+import { allFoodItems } from "./food-option";
 import { foodItemType } from "../../types";
 
-function Menu() {
-  const [selectedOption,setSelectedOption]=useState<'indian'|'chinese'|'italian'|'mexican'|'american'>('indian')
-  const [foodItems,setFoodItems]=useState<foodItemType[]>([])
-  const options=['indian','mexican','italian','chinese','american']
-  const handleOptUpdate=(value:'indian'|'chinese'|'italian'|'mexican'|'american')=>{
-    setSelectedOption(value)
-    switch(value){
-      case 'american':
-        setFoodItems(americanFood)
-        break
-      case 'chinese':
-        setFoodItems(chineseFood)
-        break
-      case 'indian':
-        setFoodItems(indianFood)
-        break
-      case 'italian':
-        setFoodItems(italianFood)
-        break
-      case 'mexican':
-        setFoodItems(mexicanFood)
-        break
-    }
+type menuType={
+  baseOpt:'indian'|'chinese'|'italian'|'mexican'|'american'|'cart'|'drinks'
+  menuPosition:[number,number,number]
+  menuOptions:string[],
+  handleShowTab:(value:string)=>void
+}
+function Menu({baseOpt,menuPosition,menuOptions,handleShowTab}:menuType) {
+  const [selectedOption,setSelectedOption]=useState<'indian'|'chinese'|'italian'|'mexican'|'american'|'cart'|'drinks'>('indian')
+  const [loading,setLoading]=useState<boolean>(true)
+  const [foodItems,setFoodItems]=useState<foodItemType[]>(allFoodItems)
+  const [orderedItem,setOrderedItem]=useState<foodItemType[]>([])
+  useEffect(()=>{
+    setSelectedOption(baseOpt)
+    setLoading(false)
+    
+  },[baseOpt])
+  const handleOptUpdate=(value:string)=>{
+    setSelectedOption(value as 'indian'|'chinese'|'italian'|'mexican'|'american'|'cart'|'drinks')
   }
-  const handleIncrement=()=>{
-
+  const handleIncrement=(name:string)=>{
+    const id=foodItems.findIndex(item=>item.name===name)
+    if(id!==undefined && id!==-1){
+      setOrderedItem((prev)=>{
+        const updatedOrders=[...prev]
+        const foundIdx=updatedOrders.findIndex(item=>item.name===foodItems[id].name)
+        if(foundIdx!==undefined &&  foundIdx!==-1){
+          if(updatedOrders[foundIdx].selectedQuantity<updatedOrders[foundIdx].quantity)
+          updatedOrders[foundIdx]={...updatedOrders[foundIdx],selectedQuantity:updatedOrders[foundIdx].selectedQuantity+1}
+        }else{
+          updatedOrders.push({...foodItems[id],selectedQuantity:foodItems[id].selectedQuantity+1})
+        }
+        return updatedOrders
+      })
+      setFoodItems((prev)=>{
+        const updatedFoodOrders=[...prev]
+        if(updatedFoodOrders[id].selectedQuantity<updatedFoodOrders[id].quantity)
+        updatedFoodOrders[id]={...updatedFoodOrders[id],selectedQuantity:updatedFoodOrders[id].selectedQuantity+1}
+        return updatedFoodOrders
+      })
   }
-  const handleDecrement=()=>{
-
+  }
+  const handleDecrement=(name:string)=>{
+    const id=foodItems.findIndex(item=>item.name==name)
+    if(id!==-1){
+    setOrderedItem((prev)=>{
+      let updatedOrders=[...prev]
+      const foundIdx=updatedOrders.findIndex(item=>item.name===foodItems[id].name)
+      if(foundIdx!==undefined &&  foundIdx!==-1){
+        if(updatedOrders[foundIdx].selectedQuantity>0){
+          updatedOrders[foundIdx]={...updatedOrders[foundIdx],selectedQuantity:updatedOrders[foundIdx].selectedQuantity-1}
+        }
+        else{
+          updatedOrders=updatedOrders.filter(item=>item.name!==foodItems[id].name)
+        }
+      }
+      return updatedOrders
+    })
+    setFoodItems((prev)=>{
+      const updatedFoodOrders=[...prev]
+      if(updatedFoodOrders[id].selectedQuantity>0){
+        updatedFoodOrders[id]={...updatedFoodOrders[id],selectedQuantity:updatedFoodOrders[id].selectedQuantity-1}
+      }
+      return updatedFoodOrders
+    })
+  }
+  }
+  const splitOnCaps=(val:string)=>{
+    return val.split(/(?=[A-Z])/).join(' ')
   }
   return (
-    <Html className="w-[55vw] h-[75vh] bg-black px-2 py-4" position={[-2.5,3,14]}>
+    <Html className="w-[55vw] h-[75vh] bg-black px-2 py-4 rounded-lg" position={menuPosition}>
+
         <div className=" w-full flex items-center justify-center text-white">
             Menu
         </div>
-        <div className=" grid grid-cols-5 w-full h-full py-3 ">
-            <div className=" col-span-1 w-full h-full border border-white flex flex-col gap-y-1 items-center py-4">
-              {options.map((opt)=>(
+        {!loading && <div className=" grid grid-cols-5 w-full h-4/5 py-3  ">
+            <div className=" col-span-1 w-full h-full border border-white flex flex-col gap-y-1 items-center py-4 rounded-s-lg">
+              {menuOptions.map((opt)=>(
                 <div className={` text-white font-medium capitalize cursor-pointer text-lg ${selectedOption===opt?'text-blue-600 underline':''} `} onClick={()=>{handleOptUpdate(opt)}}>
-                  {opt}
+                  {splitOnCaps(opt)}
                 </div>
               ))}
             </div>
-            <div className="col-span-4 w-full h-full border border-white px-2 py-2">
-              <div className=" w-full grid grid-cols-3 gap-x-2 gap-y-2">
-                {foodItems.map((ele)=>(
-                  <FoodCard foodItem={ele} handleDecrement={handleIncrement} handleIncrement={handleDecrement} />
+            <div className="col-span-4 w-full h-full border border-white px-2 py-2 rounded-e-lg overflow-y-scroll">
+              {selectedOption!=='cart'?<div className=" w-full grid grid-cols-3 gap-x-2 gap-y-2">
+                {foodItems.filter(item=>item.foodType===selectedOption).map((ele,id)=>(
+                  <FoodCard key={ele.name} id={id} foodItem={ele} handleDecrement={handleDecrement} handleIncrement={handleIncrement} />
                 ))}
-              </div>
+              </div>:<div className=" w-full grid grid-cols-3 gap-x-2 gap-y-2">
+                {orderedItem.map((ele,id)=>(
+                  <FoodCard key={ele.name} id={id} foodItem={ele} handleDecrement={handleDecrement} handleIncrement={handleIncrement} />
+                ))}
+              </div>}
               
             </div>
+        </div>}
+        <div className=" w-full h-1/5 flex items-center justify-center gap-x-4 mt-2">
+              <button className=" bg-blue-800 text-white w-24 rounded-lg font-semibold py-2" onClick={()=>{handleShowTab('food')}}>Order</button>
+              <button className=" bg-green-800 text-white w-24 rounded-lg font-semibold py-2" onClick={()=>{handleShowTab('food')}}>Back</button>
         </div>
     </Html>
   )

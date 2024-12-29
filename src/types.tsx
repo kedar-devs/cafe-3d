@@ -5,4 +5,5 @@ export type foodItemType={
     quantity: number;
     selectedQuantity: number;
     available: boolean;
+    foodType:string;
 }
