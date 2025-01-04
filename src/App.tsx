@@ -8,12 +8,14 @@ import CameraControl from './camera/camera.tsx'
 import Holding from './cafe-assets/holding.tsx'
 import { useState } from 'react'
 import Menu from './cafe-assets/menu-data/menu.tsx'
+import AssetCard from './asset-card/asset_card.tsx'
+import About from './about-me/about.tsx'
 
 function App() {
  const [cameraPosition,setCameraPosition]=useState<[number,number,number]>([4.3,1,-1.4])
  const [cameraRotation,setCameraRotaion]=useState<[number,number,number]>([-2.24,1,2.3])
  const [cameraLookAt,setCameraLookAt]=useState<[number,number,number]>([0,0,0])
- const [cameraPlacing,setCameraPlacing]=useState<'Inside Cafe'|'Outside'|'Drinks'>('Outside')
+ const [cameraPlacing,setCameraPlacing]=useState<'Inside Cafe'|'Outside'|'Drinks'|'Assets'|'About'>('Outside')
  const [holdingPosition,setHoldingPosition]=useState<[number,number,number]>([0,2.5,-3.5])
  const [showMenu,setShowMenu]=useState<boolean>(false)
  const [baseMenuOpt,setBaseMenuOpt]=useState('indian')
@@ -57,7 +59,25 @@ function App() {
       setCameraLookAt([0,0,0])
       setCameraPlacing('Outside')
       setHoldingPosition([0,2.5,-3.5])
+      break
     }
+    case 'Assets':{
+      setCameraPosition([-8,2,16.5])
+      setCameraRotaion([-0.1,-0.4,0])
+      setCameraLookAt([-3,3,3])
+      setHoldingPosition([-9.9,2,14])
+      setCameraPlacing('Assets')
+      break
+    }
+    case 'About':{
+      setCameraPosition([-1.2,1,7.5])
+      setCameraRotaion([-0.125,-0.15,0])
+      setCameraLookAt([0,2,-5])
+      setHoldingPosition([-15,2,-6])
+      setCameraPlacing('About')
+
+    }
+
   }
  }
   return (
@@ -70,6 +90,8 @@ function App() {
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
           <Holding handleShowTab={handleMenu} handleCameraChange={handleCameraChange} cameraPlacing={cameraPlacing} holdingPosition={holdingPosition}/>
           {showMenu && <Menu handleShowTab={handleMenu} baseOpt={baseMenuOpt as "indian" | "chinese" | "italian" | "mexican" | "american" | "cart" | "drinks"} menuPosition={menuPosition} menuOptions={menuOptions} />}
+          {cameraPlacing==='Assets' && <AssetCard />}
+          {cameraPlacing==='About' && <About />}
           <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
           <Boat scale={1.2} position={[-10,-1,2]}/>
           <Island />
