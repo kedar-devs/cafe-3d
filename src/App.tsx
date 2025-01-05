@@ -1,5 +1,4 @@
 import {Canvas} from '@react-three/fiber'
-import {OrbitControls} from '@react-three/drei'
 import {Island} from './models/Tropical_island.tsx'
 import { CafeMisti } from './models/Cafe-misti.tsx'
 import { BeachRock } from './models/Beach_rock.tsx'

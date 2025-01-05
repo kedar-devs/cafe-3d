@@ -7,7 +7,7 @@ type FoodCardType={
     handleDecrement:(name:string)=>void
 }
 
-function FoodCard({foodItem,id,handleIncrement,handleDecrement}:FoodCardType) {
+function FoodCard({foodItem,handleIncrement,handleDecrement}:FoodCardType) {
   return (
     <div className=" w-48 h-48 rounded-lg  px-2 py-2 col-span-1 border-2 border-[#2e3131]">
         <div className=" h-2/5 w-full justify-center items-center">
