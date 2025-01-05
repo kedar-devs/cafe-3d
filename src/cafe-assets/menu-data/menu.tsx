@@ -74,20 +74,20 @@ function Menu({baseOpt,menuPosition,menuOptions,handleShowTab}:menuType) {
     return val.split(/(?=[A-Z])/).join(' ')
   }
   return (
-    <Html className="w-[55vw] h-[75vh] bg-black px-2 py-4 rounded-lg" position={menuPosition}>
+    <Html className="w-[55vw] h-[75vh] bg-[#b5b3aa] px-2 py-4 rounded-lg" position={menuPosition}>
 
-        <div className=" w-full flex items-center justify-center text-white">
+        <div className=" w-full flex font-bold text-2xl items-center justify-center text-[#2e3131]">
             Menu
         </div>
         {!loading && <div className=" grid grid-cols-5 w-full h-4/5 py-3  ">
-            <div className=" col-span-1 w-full h-full border border-white flex flex-col gap-y-1 items-center py-4 rounded-s-lg">
+            <div className=" col-span-1 w-full h-full border border-[#5b5a54] flex flex-col gap-y-1 items-center py-4 rounded-s-lg">
               {menuOptions.map((opt)=>(
-                <div className={` text-white font-medium capitalize cursor-pointer text-lg ${selectedOption===opt?'text-blue-600 underline':''} `} onClick={()=>{handleOptUpdate(opt)}}>
+                <div className={` text-[#5b5a54] font-semibold capitalize cursor-pointer text-lg ${selectedOption===opt?'text-blue-600 underline':''} `} onClick={()=>{handleOptUpdate(opt)}}>
                   {splitOnCaps(opt)}
                 </div>
               ))}
             </div>
-            <div className="col-span-4 w-full h-full border border-white px-2 py-2 rounded-e-lg overflow-y-scroll">
+            <div className="col-span-4 w-full h-full border border-[#5b5a54] px-2 py-2 rounded-e-lg overflow-y-scroll scroll-container ">
               {selectedOption!=='cart'?<div className=" w-full grid grid-cols-3 gap-x-2 gap-y-2">
                 {foodItems.filter(item=>item.foodType===selectedOption).map((ele,id)=>(
                   <FoodCard key={ele.name} id={id} foodItem={ele} handleDecrement={handleDecrement} handleIncrement={handleIncrement} />

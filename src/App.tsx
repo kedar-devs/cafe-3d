@@ -43,6 +43,7 @@ function App() {
       setCameraPlacing('Inside Cafe')
       setCameraLookAt([0,0,0])
       setHoldingPosition([-7.5,4,11])
+      setShowMenu(false)
       break
     }
     case 'Drink':{
@@ -51,6 +52,7 @@ function App() {
       setCameraLookAt([-1.5,2.2,18.5])
       setCameraPlacing('Drinks')
       setHoldingPosition([-0.2,2.5,18])
+      setShowMenu(false)
       break
     }
     case 'Leave':{
@@ -59,6 +61,7 @@ function App() {
       setCameraLookAt([0,0,0])
       setCameraPlacing('Outside')
       setHoldingPosition([0,2.5,-3.5])
+      setShowMenu(false)
       break
     }
     case 'Assets':{
@@ -84,7 +87,7 @@ function App() {
     
      <div className=' h-screen w-full'>
       <Canvas className=' h-full w-full bg-gray-400 '>
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         <CameraControl cameraPosition={cameraPosition} cameraRotation={cameraRotation} cameraLookAt={cameraLookAt} />
         <ambientLight />
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
