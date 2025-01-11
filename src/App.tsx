@@ -5,10 +5,11 @@ import { BeachRock } from './models/Beach_rock.tsx'
 import { Boat } from './models/Boat.tsx'
 import CameraControl from './camera/camera.tsx'
 import Holding from './cafe-assets/holding.tsx'
-import { useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import Menu from './cafe-assets/menu-data/menu.tsx'
 import AssetCard from './asset-card/asset_card.tsx'
 import About from './about-me/about.tsx'
+import Loader from './loader/loader.tsx'
 
 function App() {
  const [cameraPosition,setCameraPosition]=useState<[number,number,number]>([4.3,1,-1.4])
@@ -21,7 +22,20 @@ function App() {
  const [baseMenuOpt,setBaseMenuOpt]=useState('indian')
  const [menuPosition,setMenuPosition]=useState<[number,number,number]>([-2.5,3,14])
  const [menuOptions,setMenuOptions]=useState<string[]>([])
+ const [isMobile,setIsMobile]=useState(false)
  
+
+useEffect(()=>{
+  const checkScreenSize = () => {
+    setIsMobile(window.innerWidth < 1068);
+  };
+  checkScreenSize();
+  window.addEventListener('resize', checkScreenSize);
+
+  return () => {
+    window.removeEventListener('resize', checkScreenSize);
+  };
+}, []);
 
  const handleMenu=(value:string)=>{
   if(showMenu===true){
@@ -33,10 +47,10 @@ function App() {
   setBaseMenuOpt(value)
   if(value==='indian'){
     setMenuPosition([-2.5,3,14])
-    setMenuOptions(['indian','mexican','italian','chinese','american','cart'])
+    setMenuOptions(['indian','mexican','italian','chinese','american','cart','orders'])
   }else{
     setMenuPosition([-1,2.75,18])
-    setMenuOptions(['beverages','coldDrinks','hotDrinks','cart'])
+    setMenuOptions(['beverages','coldDrinks','hotDrinks','cart','orders'])
   }
  }
 
@@ -92,7 +106,8 @@ function App() {
   return (
     
      <div className=' h-screen w-full'>
-      <Canvas className=' h-full w-full bg-gray-400 '>
+      {!isMobile?<Canvas className=' h-full w-full bg-gray-400 '>
+        <Suspense fallback={<Loader />} >
         {/* <OrbitControls /> */}
         <CameraControl cameraPosition={cameraPosition} cameraRotation={cameraRotation} cameraLookAt={cameraLookAt} />
         <ambientLight />
@@ -104,7 +119,20 @@ function App() {
           <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
           <Boat scale={1.2} position={[-10,-1,2]}/>
           <Island />
-      </Canvas>
+          </Suspense>
+      </Canvas>:<div className=' h-full w-full flex flex-col items-center justify-center py-4 px-4 bg-black text-white text-base font-medium'>
+        <label className=' text-3xl font-semibold'>Mission Failed Sucessfully</label>
+          <div className=' h-96 w-4/5 border border-white rounded-lg py-2 px-2 overflow-y-scroll scroll-container mt-2'>
+          Hey there, dear user!
+            I've noticed you're using a smartphone, but unfortunately, that's not allowed here. Why, you ask? Well, my legendary laziness stopped me from making this site responsive.
+
+            Now, I could give you false promises about fixing it someday, but let's be honest — there's a high chance it will never happen.
+
+            So, I kindly request you to use a tablet or a laptop with a resolution of more than 1068x750 to ensure everything renders smoothly.
+
+            I truly appreciate your time and effort. Thanks a lot, and adios!
+          </div> 
+        </div>}
      </div>
     
   )

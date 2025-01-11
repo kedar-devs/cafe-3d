@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/tropical-island-f91862f8c38b481aa19edcca
 Title: Tropical Island
 */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useGraph } from '@react-three/fiber'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import { SkeletonUtils } from 'three-stdlib'
@@ -15,11 +15,19 @@ import * as THREE from 'three'
 
 export function Island() {
   const group = React.useRef(null)
-  const { scene, animations } = useGLTF('/cafe-3d/tropical_island.glb')
+  const { scene, animations } = useGLTF('/cafe-3d/tropical_island.glb',true)
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
   const { actions } = useAnimations(animations, group)
-  console.log(actions)
+  useEffect(()=>{
+    console.log(actions,animations)
+    if (actions) {
+      const action = actions['AnimationName'] 
+      if (action) {
+        action.reset().play() 
+      }
+    }
+  },[actions])
   return (
     <group ref={group}  dispose={null}>
       <group name="Sketchfab_Scene">
