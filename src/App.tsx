@@ -49,7 +49,7 @@ useEffect(()=>{
     setMenuPosition([-2.5,3,14])
     setMenuOptions(['indian','mexican','italian','chinese','american','cart','orders'])
   }else{
-    setMenuPosition([-1,2.75,18])
+    setMenuPosition([-0.5,2.75,18])
     setMenuOptions(['beverages','coldDrinks','hotDrinks','cart','orders'])
   }
  }

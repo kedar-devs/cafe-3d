@@ -94,7 +94,7 @@ function Menu({baseOpt,menuPosition,menuOptions,handleShowTab}:menuType) {
     return val.split(/(?=[A-Z])/).join(' ')
   }
   return (
-    <Html className="w-[55vw] h-[75vh] bg-[#b5b3aa] px-2 py-4 rounded-lg" position={menuPosition}>
+    <Html className="w-[65vw] h-[75vh] bg-[#b5b3aa] px-2 py-4 rounded-lg" position={menuPosition}>
 
         <div className=" w-full flex font-bold text-2xl items-center justify-center text-[#2e3131]">
             Menu
