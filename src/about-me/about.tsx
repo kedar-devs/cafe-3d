@@ -1,6 +1,8 @@
 import { Html } from "@react-three/drei"
-
-function About() {
+type AboutType={
+  handleCameraChange:(value:string)=>void
+}
+function About({handleCameraChange}:AboutType) {
   const handleClick = (value:string) => {
     switch(value){
       case 'github':{
@@ -33,8 +35,8 @@ function About() {
     
   };
   return (
-    <Html className="w-[65vw] h-[75vh] flex flex-col justify-center items-center bg-black bg-opacity-65 px-8 py-8 rounded-lg text-white" position={[-10,10,-6]} >
-        <label className=" font-semibold text-lg text-white ">About Me</label>
+    <Html className="w-[65vw] h-[90vh] flex flex-col items-center bg-black bg-opacity-65 px-8 py-2 rounded-lg text-white" position={[-10,9,-4]} >
+        <label className=" font-semibold text-2xl text-white ">About Me</label>
         <div className=" border rounded-lg border-white  px-4" style={{lineHeight:1.6}}>
       <h2 className=" font-semibold">Hi there!</h2>
       <p>
@@ -69,6 +71,9 @@ function About() {
         </div>
       </div>
       </div>
+    </div>
+    <div className=" w-full flex justify-center items-center mt-3">
+      <button className=" w-20 py-1 border border-white rounded-lg text-xl font-medium" onClick={()=>{handleCameraChange('Leave')}}>Leave</button>
     </div>
     </Html>
   )

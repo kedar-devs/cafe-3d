@@ -67,14 +67,15 @@ function App() {
       setCameraPlacing('Outside')
       setHoldingPosition([0,1,-3.5])
       setShowMenu(false)
+      setHoldingVisible(true)
       break
     }
     case 'Assets':{
       setCameraPosition([-8,2,16.5])
       setCameraRotaion([-0.1,-0.4,0])
       setCameraLookAt([-3,3,3])
-      setHoldingPosition([-9.9,2,14])
       setCameraPlacing('Assets')
+      setHoldingVisible(false)
       break
     }
     case 'About':{
@@ -83,7 +84,7 @@ function App() {
       setCameraLookAt([0,2,-5])
       setHoldingPosition([-15,2,-6])
       setCameraPlacing('About')
-
+      setHoldingVisible(false)
     }
 
   }
@@ -98,8 +99,8 @@ function App() {
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
           <Holding handleShowTab={handleMenu} holdingVisible={holdingVisible} handleCameraChange={handleCameraChange} cameraPlacing={cameraPlacing} holdingPosition={holdingPosition}/>
           {showMenu && <Menu handleShowTab={handleMenu} baseOpt={baseMenuOpt as "indian" | "chinese" | "italian" | "mexican" | "american" | "cart" | "drinks"} menuPosition={menuPosition} menuOptions={menuOptions} />}
-          {cameraPlacing==='Assets' && <AssetCard />}
-          {cameraPlacing==='About' && <About />}
+          {cameraPlacing==='Assets' && <AssetCard handleCameraChange={handleCameraChange}/>}
+          {cameraPlacing==='About' && <About handleCameraChange={handleCameraChange}/>}
           <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
           <Boat scale={1.2} position={[-10,-1,2]}/>
           <Island />

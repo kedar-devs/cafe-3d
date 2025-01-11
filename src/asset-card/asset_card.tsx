@@ -1,10 +1,14 @@
 import { Html } from "@react-three/drei"
 import { threeDAssets } from "./threeD-assets"
 
+type AssetType={
+  handleCameraChange:(value:string)=>void
+}
 
-function AssetCard() {
+function AssetCard({handleCameraChange}:AssetType) {
   return (
-    <Html className="w-[65vw] h-[75vh] grid grid-cols-3 bg-black bg-opacity-65 px-8 py-8 rounded-lg overflow-y-scroll text-white" position={[-10,4,12]}>
+    <Html className="w-[65vw] h-[75vh]  bg-black bg-opacity-65 px-8 py-8 rounded-lg  text-white" position={[-10,4,12]}>
+        <div className="w-full h-[90%] grid grid-cols-3 overflow-y-scroll scroll-container gap-y-2">
         {threeDAssets.map((ele)=>(
             <div className=" w-48 h-48 rounded-lg border border-white flex flex-col py-2 justify-center items-center ">
                 <div className=" h-2/5 w-full justify-center items-center rounded-lg">
@@ -16,6 +20,10 @@ function AssetCard() {
                 </div>
             </div>
         ))}
+        </div>
+        <div className=" w-full flex h-[10%] items-center justify-center">
+          <button className=" w-24 h-10 text-xl  border border-white rounded-lg font-semibold " onClick={()=>{handleCameraChange('Leave')}}>Back</button>
+        </div>
     </Html>
   )
 }
