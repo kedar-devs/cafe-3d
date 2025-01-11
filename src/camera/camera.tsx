@@ -19,9 +19,7 @@ function CameraControl({cameraPosition,cameraRotation,cameraLookAt}:cameraType) 
         // targetLookAtRef.current.set(...cameraLookAt)
     },[...cameraPosition,...cameraRotation,...cameraLookAt])
     useFrame(() => {
-        console.log("Camera Position:", camera.position);
-        console.log("Camera Rotation:", camera.rotation);
-        camera.position.lerp(targetPosRef.current, 0.1);
+        camera.position.lerp(targetPosRef.current, 0.02);
         camera.lookAt(...cameraLookAt)
         // camera.lookAt(-3,3,20)
 

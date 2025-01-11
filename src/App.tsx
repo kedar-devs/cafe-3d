@@ -15,7 +15,8 @@ function App() {
  const [cameraRotation,setCameraRotaion]=useState<[number,number,number]>([-2.24,1,2.3])
  const [cameraLookAt,setCameraLookAt]=useState<[number,number,number]>([0,0,0])
  const [cameraPlacing,setCameraPlacing]=useState<'Inside Cafe'|'Outside'|'Drinks'|'Assets'|'About'>('Outside')
- const [holdingPosition,setHoldingPosition]=useState<[number,number,number]>([0,2.5,-3.5])
+ const [holdingPosition,setHoldingPosition]=useState<[number,number,number]>([0,1,-3.5])
+ const [holdingVisible,setHoldingVisible]=useState<boolean>(true)
  const [showMenu,setShowMenu]=useState<boolean>(false)
  const [baseMenuOpt,setBaseMenuOpt]=useState('indian')
  const [menuPosition,setMenuPosition]=useState<[number,number,number]>([-2.5,3,14])
@@ -23,6 +24,11 @@ function App() {
  
 
  const handleMenu=(value:string)=>{
+  if(showMenu===true){
+    setHoldingVisible(true)
+  }else{
+    setHoldingVisible(false)
+  }
   setShowMenu(!showMenu)
   setBaseMenuOpt(value)
   if(value==='indian'){
@@ -41,7 +47,7 @@ function App() {
       setCameraRotaion([-0.12,-0.03,-0.03])
       setCameraPlacing('Inside Cafe')
       setCameraLookAt([0,0,0])
-      setHoldingPosition([-7.5,4,11])
+      setHoldingPosition([-1,2,14])
       setShowMenu(false)
       break
     }
@@ -59,7 +65,7 @@ function App() {
       setCameraRotaion([-2.24,1,2.3])
       setCameraLookAt([0,0,0])
       setCameraPlacing('Outside')
-      setHoldingPosition([0,2.5,-3.5])
+      setHoldingPosition([0,1,-3.5])
       setShowMenu(false)
       break
     }
@@ -90,7 +96,7 @@ function App() {
         <CameraControl cameraPosition={cameraPosition} cameraRotation={cameraRotation} cameraLookAt={cameraLookAt} />
         <ambientLight />
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
-          <Holding handleShowTab={handleMenu} handleCameraChange={handleCameraChange} cameraPlacing={cameraPlacing} holdingPosition={holdingPosition}/>
+          <Holding handleShowTab={handleMenu} holdingVisible={holdingVisible} handleCameraChange={handleCameraChange} cameraPlacing={cameraPlacing} holdingPosition={holdingPosition}/>
           {showMenu && <Menu handleShowTab={handleMenu} baseOpt={baseMenuOpt as "indian" | "chinese" | "italian" | "mexican" | "american" | "cart" | "drinks"} menuPosition={menuPosition} menuOptions={menuOptions} />}
           {cameraPlacing==='Assets' && <AssetCard />}
           {cameraPlacing==='About' && <About />}

@@ -1,6 +1,6 @@
 export const indianFood = [
     {
-      imgUrl: "/biryani.png",
+      imgUrl: "/cafe-3d/biryani.png",
       name: "Biryani",
       price: 200,
       quantity: 10,
@@ -8,7 +8,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/butterChicken-min.jpg",
+      imgUrl: "/cafe-3d/butterChicken-min.jpg",
       name: "Butter Chicken",
       price: 250,
       quantity: 8,
@@ -16,7 +16,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/samosa-min.jpg",
+      imgUrl: "/cafe-3d/samosa-min.jpg",
       name: "Samosa",
       price: 20,
       quantity: 50,
@@ -24,7 +24,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/dosa-min.jpg",
+      imgUrl: "/cafe-3d/dosa-min.jpg",
       name: "Dosa",
       price: 100,
       quantity: 15,
@@ -32,7 +32,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/naan-min.jpg",
+      imgUrl: "/cafe-3d/naan-min.jpg",
       name: "Naan",
       price: 40,
       quantity: 25,
@@ -43,7 +43,7 @@ export const indianFood = [
   
   export const mexicanFood = [
     {
-      imgUrl: "/taco-min.jpg",
+      imgUrl: "/cafe-3d/taco-min.jpg",
       name: "Tacos",
       price: 150,
       quantity: 12,
@@ -51,7 +51,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/burito-min.jpg",
+      imgUrl: "/cafe-3d/burito-min.jpg",
       name: "Burrito",
       price: 200,
       quantity: 10,
@@ -59,7 +59,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/quesadilla-min.jpg",
+      imgUrl: "/cafe-3d/quesadilla-min.jpg",
       name: "Quesadilla",
       price: 180,
       quantity: 8,
@@ -67,7 +67,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/enchilada-min.jpg",
+      imgUrl: "/cafe-3d/enchilada-min.jpg",
       name: "Enchilada",
       price: 170,
       quantity: 7,
@@ -75,7 +75,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/guacamole-min.jpg",
+      imgUrl: "/cafe-3d/guacamole-min.jpg",
       name: "Guacamole",
       price: 120,
       quantity: 20,
@@ -86,7 +86,7 @@ export const indianFood = [
   
   export const italianFood = [
     {
-      imgUrl: "/pizza-min.jpg",
+      imgUrl: "/cafe-3d/pizza-min.jpg",
       name: "Pizza",
       price: 300,
       quantity: 5,
@@ -94,7 +94,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/pasta-min.jpg",
+      imgUrl: "/cafe-3d/pasta-min.jpg",
       name: "Pasta",
       price: 250,
       quantity: 6,
@@ -102,7 +102,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/lasagna-min.jpg",
+      imgUrl: "/cafe-3d/lasagna-min.jpg",
       name: "Lasagna",
       price: 400,
       quantity: 4,
@@ -110,7 +110,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/ravioli-min.jpg",
+      imgUrl: "/cafe-3d/ravioli-min.jpg",
       name: "Ravioli",
       price: 350,
       quantity: 3,
@@ -118,7 +118,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/risotto-min.jpg",
+      imgUrl: "/cafe-3d/risotto-min.jpg",
       name: "Risotto",
       price: 280,
       quantity: 7,
@@ -129,7 +129,7 @@ export const indianFood = [
   
   export const chineseFood = [
     {
-      imgUrl: "/noodles-min.jpg",
+      imgUrl: "/cafe-3d/noodles-min.jpg",
       name: "Noodles",
       price: 180,
       quantity: 10,
@@ -137,7 +137,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/dumplings-min.jpg",
+      imgUrl: "/cafe-3d/dumplings-min.jpg",
       name: "Dumplings",
       price: 150,
       quantity: 12,
@@ -145,7 +145,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/springRoll-min.jpg",
+      imgUrl: "/cafe-3d/springRoll-min.jpg",
       name: "Spring Roll",
       price: 120,
       quantity: 20,
@@ -153,7 +153,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/friedRice-min.jpg",
+      imgUrl: "/cafe-3d/friedRice-min.jpg",
       name: "Fried Rice",
       price: 200,
       quantity: 8,
@@ -161,7 +161,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/szechuanChicken-min.jpg",
+      imgUrl: "/cafe-3d/szechuanChicken-min.jpg",
       name: "Szechuan Chicken",
       price: 250,
       quantity: 6,
@@ -172,7 +172,7 @@ export const indianFood = [
   
   export const americanFood = [
     {
-      imgUrl: "/cheeseburger-min.jpg",
+      imgUrl: "/cafe-3d/cheeseburger-min.jpg",
       name: "Cheeseburger",
       price: 180,
       quantity: 15,
@@ -180,7 +180,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/hotDog-min.jpg",
+      imgUrl: "/cafe-3d/hotDog-min.jpg",
       name: "Hot Dog",
       price: 120,
       quantity: 20,
@@ -188,7 +188,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/steak-min.jpg",
+      imgUrl: "/cafe-3d/steak-min.jpg",
       name: "Steak",
       price: 500,
       quantity: 8,
@@ -196,7 +196,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/friedChicken-min.jpg",
+      imgUrl: "/cafe-3d/friedChicken-min.jpg",
       name: "Fried Chicken",
       price: 220,
       quantity: 10,
@@ -204,7 +204,7 @@ export const indianFood = [
       available: true
     },
     {
-      imgUrl: "/applePie-min.jpg",
+      imgUrl: "/cafe-3d/applePie-min.jpg",
       name: "Apple Pie",
       price: 150,
       quantity: 12,
@@ -215,7 +215,7 @@ export const indianFood = [
   export const allFoodItems = [
     // Indian Food
     {
-      imgUrl: "/biryani.png",
+      imgUrl: "/cafe-3d/biryani.png",
       name: "Biryani",
       price: 200,
       quantity: 10,
@@ -224,7 +224,7 @@ export const indianFood = [
       foodType: "indian"
     },
     {
-      imgUrl: "/butterChicken-min.jpg",
+      imgUrl: "/cafe-3d/butterChicken-min.jpg",
       name: "Butter Chicken",
       price: 250,
       quantity: 8,
@@ -233,7 +233,7 @@ export const indianFood = [
       foodType: "indian"
     },
     {
-      imgUrl: "/samosa-min.jpg",
+      imgUrl: "/cafe-3d/samosa-min.jpg",
       name: "Samosa",
       price: 20,
       quantity: 50,
@@ -242,7 +242,7 @@ export const indianFood = [
       foodType: "indian"
     },
     {
-      imgUrl: "/dosa-min.jpg",
+      imgUrl: "/cafe-3d/dosa-min.jpg",
       name: "Dosa",
       price: 100,
       quantity: 15,
@@ -251,7 +251,7 @@ export const indianFood = [
       foodType: "indian"
     },
     {
-      imgUrl: "/naan-min.jpg",
+      imgUrl: "/cafe-3d/naan-min.jpg",
       name: "Naan",
       price: 40,
       quantity: 25,
@@ -261,7 +261,7 @@ export const indianFood = [
     },
     // Mexican Food
     {
-      imgUrl: "/taco-min.jpg",
+      imgUrl: "/cafe-3d/taco-min.jpg",
       name: "Tacos",
       price: 150,
       quantity: 12,
@@ -270,7 +270,7 @@ export const indianFood = [
       foodType: "mexican"
     },
     {
-      imgUrl: "/burito-min.jpg",
+      imgUrl: "/cafe-3d/burito-min.jpg",
       name: "Burrito",
       price: 200,
       quantity: 10,
@@ -279,7 +279,7 @@ export const indianFood = [
       foodType: "mexican"
     },
     {
-      imgUrl: "/quesadilla-min.jpg",
+      imgUrl: "/cafe-3d/quesadilla-min.jpg",
       name: "Quesadilla",
       price: 180,
       quantity: 8,
@@ -288,7 +288,7 @@ export const indianFood = [
       foodType: "mexican"
     },
     {
-      imgUrl: "/enchilada-min.jpg",
+      imgUrl: "/cafe-3d/enchilada-min.jpg",
       name: "Enchilada",
       price: 170,
       quantity: 7,
@@ -297,7 +297,7 @@ export const indianFood = [
       foodType: "mexican"
     },
     {
-      imgUrl: "/guacamole-min.jpg",
+      imgUrl: "/cafe-3d/guacamole-min.jpg",
       name: "Guacamole",
       price: 120,
       quantity: 20,
@@ -307,7 +307,7 @@ export const indianFood = [
     },
     // Italian Food
     {
-      imgUrl: "/pizza-min.jpg",
+      imgUrl: "/cafe-3d/pizza-min.jpg",
       name: "Pizza",
       price: 300,
       quantity: 5,
@@ -316,7 +316,7 @@ export const indianFood = [
       foodType: "italian"
     },
     {
-      imgUrl: "/pasta-min.jpg",
+      imgUrl: "/cafe-3d/pasta-min.jpg",
       name: "Pasta",
       price: 250,
       quantity: 6,
@@ -325,7 +325,7 @@ export const indianFood = [
       foodType: "italian"
     },
     {
-      imgUrl: "/lasagna-min.jpg",
+      imgUrl: "/cafe-3d/lasagna-min.jpg",
       name: "Lasagna",
       price: 400,
       quantity: 4,
@@ -334,7 +334,7 @@ export const indianFood = [
       foodType: "italian"
     },
     {
-      imgUrl: "/ravioli-min.jpg",
+      imgUrl: "/cafe-3d/ravioli-min.jpg",
       name: "Ravioli",
       price: 350,
       quantity: 3,
@@ -343,7 +343,7 @@ export const indianFood = [
       foodType: "italian"
     },
     {
-      imgUrl: "/risotto-min.jpg",
+      imgUrl: "/cafe-3d/risotto-min.jpg",
       name: "Risotto",
       price: 280,
       quantity: 7,
@@ -353,7 +353,7 @@ export const indianFood = [
     },
     // Chinese Food
     {
-      imgUrl: "/noodles-min.jpg",
+      imgUrl: "/cafe-3d/noodles-min.jpg",
       name: "Noodles",
       price: 180,
       quantity: 10,
@@ -362,7 +362,7 @@ export const indianFood = [
       foodType: "chinese"
     },
     {
-      imgUrl: "/dumplings-min.jpg",
+      imgUrl: "/cafe-3d/dumplings-min.jpg",
       name: "Dumplings",
       price: 150,
       quantity: 12,
@@ -371,7 +371,7 @@ export const indianFood = [
       foodType: "chinese"
     },
     {
-      imgUrl: "/springRoll-min.jpg",
+      imgUrl: "/cafe-3d/springRoll-min.jpg",
       name: "Spring Roll",
       price: 120,
       quantity: 20,
@@ -380,7 +380,7 @@ export const indianFood = [
       foodType: "chinese"
     },
     {
-      imgUrl: "/friedRice-min.jpg",
+      imgUrl: "/cafe-3d/friedRice-min.jpg",
       name: "Fried Rice",
       price: 200,
       quantity: 8,
@@ -389,7 +389,7 @@ export const indianFood = [
       foodType: "chinese"
     },
     {
-      imgUrl: "/szechuanChicken-min.jpg",
+      imgUrl: "/cafe-3d/szechuanChicken-min.jpg",
       name: "Szechuan Chicken",
       price: 250,
       quantity: 6,
@@ -399,7 +399,7 @@ export const indianFood = [
     },
     // American Food
     {
-      imgUrl: "/cheeseburger-min.jpg",
+      imgUrl: "/cafe-3d/cheeseburger-min.jpg",
       name: "Cheeseburger",
       price: 180,
       quantity: 15,
@@ -408,7 +408,7 @@ export const indianFood = [
       foodType: "american"
     },
     {
-      imgUrl: "/hotDog-min.jpg",
+      imgUrl: "/cafe-3d/hotDog-min.jpg",
       name: "Hot Dog",
       price: 120,
       quantity: 20,
@@ -417,7 +417,7 @@ export const indianFood = [
       foodType: "american"
     },
     {
-      imgUrl: "/steak-min.jpg",
+      imgUrl: "/cafe-3d/steak-min.jpg",
       name: "Steak",
       price: 500,
       quantity: 8,
@@ -426,7 +426,7 @@ export const indianFood = [
       foodType: "american"
     },
     {
-      imgUrl: "/friedChicken-min.jpg",
+      imgUrl: "/cafe-3d/friedChicken-min.jpg",
       name: "Fried Chicken",
       price: 220,
       quantity: 10,
@@ -435,7 +435,7 @@ export const indianFood = [
       foodType: "american"
     },
     {
-      imgUrl: "/applePie-min.jpg",
+      imgUrl: "/cafe-3d/applePie-min.jpg",
       name: "Apple Pie",
       price: 150,
       quantity: 12,
@@ -445,7 +445,7 @@ export const indianFood = [
     }
     ,// Hot Drinks (with alcohol)
 {
-  imgUrl: "/mullet_wine.jpg",
+  imgUrl: "/cafe-3d/mullet_wine.jpg",
   name: "Mulled Wine",
   price: 300,
   quantity: 8,
@@ -454,7 +454,7 @@ export const indianFood = [
   foodType: "hotDrinks"
 },
 {
-  imgUrl: "/irish_coffee.jpg",
+  imgUrl: "/cafe-3d/irish_coffee.jpg",
   name: "Irish Coffee",
   price: 350,
   quantity: 6,
@@ -463,7 +463,7 @@ export const indianFood = [
   foodType: "hotDrinks"
 },
 {
-  imgUrl: "/hot_toddy.jpg",
+  imgUrl: "/cafe-3d/hot_toddy.jpg",
   name: "Hot Toddy",
   price: 280,
   quantity: 10,
@@ -474,7 +474,7 @@ export const indianFood = [
 
 // Cold Drinks (without alcohol)
 {
-  imgUrl: "/lemonade.jpg",
+  imgUrl: "/cafe-3d/lemonade.jpg",
   name: "Lemonade",
   price: 120,
   quantity: 20,
@@ -483,7 +483,7 @@ export const indianFood = [
   foodType: "coldDrinks"
 },
 {
-  imgUrl: "/iced_tea.jpg",
+  imgUrl: "/cafe-3d/iced_tea.jpg",
   name: "Iced Tea",
   price: 150,
   quantity: 15,
@@ -492,7 +492,7 @@ export const indianFood = [
   foodType: "coldDrinks"
 },
 {
-  imgUrl: "/fruit_punch.jpg",
+  imgUrl: "/cafe-3d/fruit_punch.jpg",
   name: "Fruit Punch",
   price: 200,
   quantity: 12,
@@ -503,7 +503,7 @@ export const indianFood = [
 
 // Beverages (like coffee, chai, etc.)
 {
-  imgUrl: "/chai.jpg",
+  imgUrl: "/cafe-3d/chai.jpg",
   name: "Chai",
   price: 50,
   quantity: 25,
@@ -512,7 +512,7 @@ export const indianFood = [
   foodType: "beverages"
 },
 {
-  imgUrl: "/coffee.png",
+  imgUrl: "/cafe-3d/coffee.png",
   name: "Coffee",
   price: 100,
   quantity: 20,
@@ -521,7 +521,7 @@ export const indianFood = [
   foodType: "beverages"
 },
 {
-  imgUrl: "/hot_chocolate.jpg",
+  imgUrl: "/cafe-3d/hot_chocolate.jpg",
   name: "Hot Chocolate",
   price: 150,
   quantity: 18,

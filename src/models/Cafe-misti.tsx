@@ -11,7 +11,7 @@ type cafeMistiProp={
   rotation:[number,number,number]
 }
 export function CafeMisti(props:cafeMistiProp) {
-  const { nodes, materials } = useGLTF('/cafe-misti.glb')
+  const { nodes, materials } = useGLTF('/cafe-3d/cafe-misti.glb')
   return (
     <group {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.011}>

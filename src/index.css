@@ -16,3 +16,7 @@
   .scroll-container {
     scrollbar-width: none; /* Hides scrollbar in Firefox */
   }
+body{
+  font-family:'Oswald',sans-serif ;
+}
+

@@ -11,7 +11,7 @@ type BeachRockType={
   rotation:[number,number,number]
 }
 export function BeachRock(props:BeachRockType) {
-  const { nodes, materials } = useGLTF('/beach_rock.glb') 
+  const { nodes, materials } = useGLTF('/cafe-3d/beach_rock.glb') 
   return (
     <group {...props} dispose={null}>
       <group position={[-0.348, 0.065, -0.022]} rotation={[0.708, 1.492, -2.21]}>

@@ -52,19 +52,19 @@ function About() {
       <div className=" w-full flex justify-center items-center py-4">
       <div className="w-96 grid grid-cols-2 gap-x-4 gap-y-4">
         <div className=" col-span-1 flex flex-col gap-y-2 py-4 justify-center items-center border border-white rounded-xl cursor-pointer" onClick={()=>{handleClick('github')}}>
-          <img src='/github.png' className=" w-24 h-24 rounded-xl" />
+          <img src='/cafe-3d/github.png' className=" w-24 h-24 rounded-xl" />
           <label className=" font-semibold text-xl">Github</label> 
         </div>
         <div className=" col-span-1 flex flex-col gap-y-2 py-4 justify-center items-center border border-white rounded-xl cursor-pointer" onClick={()=>{handleClick('linkedIn')}}>
-          <img src='/linkedIn.png' className=" w-24 h-24 rounded-xl" />
+          <img src='/cafe-3d/linkedIn.png' className=" w-24 h-24 rounded-xl" />
           <label className=" font-semibold text-xl">Linked In</label> 
         </div>
         <div className=" col-span-1 flex flex-col gap-y-2 py-4 justify-center items-center border border-white rounded-xl cursor-pointer" onClick={()=>{handleClick('gmail')}}>
-          <img src='/gmail.png' className=" w-24 h-24 rounded-xl" />
+          <img src='/cafe-3d/gmail.png' className=" w-24 h-24 rounded-xl" />
           <label className=" font-semibold text-xl">Gmail</label> 
         </div>
         <div className=" col-span-1 flex flex-col gap-y-2 py-4 justify-center items-center border border-white rounded-xl cursor-pointer" onClick={()=>{handleClick('resume')}}>
-          <img src='/pdf.png' className=" w-24 h-24 rounded-xl" />
+          <img src='/cafe-3d/pdf.png' className=" w-24 h-24 rounded-xl" />
           <label className=" font-semibold text-xl">Resume</label> 
         </div>
       </div>

@@ -14,7 +14,7 @@ type boatType={
   position:[number,number,number],
 }
 export function Boat(props:boatType) {
-  const { nodes, materials } = useGLTF('/boat_josefa.glb')
+  const { nodes, materials } = useGLTF('/cafe-3d/boat_josefa.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={(nodes.Object_2  as THREE.Mesh).geometry} material={materials.barco_con_low_Material_u1_v1} rotation={[-Math.PI / 2, 0, 0]} scale={0.59} />

@@ -15,7 +15,7 @@ import * as THREE from 'three'
 
 export function Island() {
   const group = React.useRef(null)
-  const { scene, animations } = useGLTF('/tropical_island.glb')
+  const { scene, animations } = useGLTF('/cafe-3d/tropical_island.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
   const { actions } = useAnimations(animations, group)
