@@ -4,18 +4,12 @@ import { CafeMisti } from './models/Cafe-misti.tsx'
 import { BeachRock } from './models/Beach_rock.tsx'
 import { Boat } from './models/Boat.tsx'
 import CameraControl from './camera/camera.tsx'
-<<<<<<< HEAD
-=======
-import { OrbitControls } from '@react-three/drei'
->>>>>>> master
 import Holding from './cafe-assets/holding.tsx'
 import { Suspense, useEffect, useState } from 'react'
 import Menu from './cafe-assets/menu-data/menu.tsx'
 import AssetCard from './asset-card/asset_card.tsx'
 import About from './about-me/about.tsx'
 import Loader from './loader/loader.tsx'
-<<<<<<< HEAD
-=======
 import { Radio } from './models/Radio.tsx'
 import { useRef,type ChangeEvent } from 'react'
 import { Pan } from './models/Pan.tsx'
@@ -23,26 +17,16 @@ import type { foodItemType } from './types.tsx'
 import { usePlaceOrder } from './state/zustand.tsx'
 import { Plate } from './models/Plate.tsx'
 import { Glass } from './models/Glass.tsx'
->>>>>>> master
 
 function App() {
  const [cameraPosition,setCameraPosition]=useState<[number,number,number]>([4.3,1,-1.4])
  const [cameraRotation,setCameraRotaion]=useState<[number,number,number]>([-2.24,1,2.3])
  const [cameraLookAt,setCameraLookAt]=useState<[number,number,number]>([0,0,0])
-<<<<<<< HEAD
- const [cameraPlacing,setCameraPlacing]=useState<'Inside Cafe'|'Outside'|'Drinks'|'Assets'|'About'>('Outside')
-=======
  const [cameraPlacing,setCameraPlacing]=useState<'Inside Cafe'|'Outside'|'Drinks'|'Assets'|'About'|'Music'>('Outside')
->>>>>>> master
  const [holdingPosition,setHoldingPosition]=useState<[number,number,number]>([0,1,-3.5])
  const [holdingVisible,setHoldingVisible]=useState<boolean>(true)
  const [showMenu,setShowMenu]=useState<boolean>(false)
  const [baseMenuOpt,setBaseMenuOpt]=useState('indian')
-<<<<<<< HEAD
- const [menuPosition,setMenuPosition]=useState<[number,number,number]>([-2.5,3,14])
- const [menuOptions,setMenuOptions]=useState<string[]>([])
- const [isMobile,setIsMobile]=useState(false)
-=======
  const [orderType,setOrderType]=useState<'Food'|'Drinks'>('Drinks')
  const [totalOrders,setTotalOrder]=useState<foodItemType[]>([])
  const [menuPosition,setMenuPosition]=useState<[number,number,number]>([-2.5,3,14])
@@ -52,7 +36,6 @@ function App() {
  const inputRef=useRef<HTMLInputElement|null>(null)
   const audioRef=useRef<HTMLAudioElement|null>(null)
   const placedOrders=usePlaceOrder(state=>state.placedOrder)
->>>>>>> master
  
 
 useEffect(()=>{
@@ -67,8 +50,6 @@ useEffect(()=>{
   };
 }, []);
 
-<<<<<<< HEAD
-=======
 useEffect(()=>{
   setTotalOrder(placedOrders)
 },[placedOrders])
@@ -84,7 +65,6 @@ useEffect(()=>{
       }
     }
   }
->>>>>>> master
  const handleMenu=(value:string)=>{
   if(showMenu===true){
     setHoldingVisible(true)
@@ -95,14 +75,6 @@ useEffect(()=>{
   setBaseMenuOpt(value)
   if(value==='indian'){
     setMenuPosition([-2.5,3,14])
-<<<<<<< HEAD
-    setMenuOptions(['indian','mexican','italian','chinese','american','cart','orders'])
-  }else{
-    setMenuPosition([-0.5,2.75,18])
-    setMenuOptions(['beverages','coldDrinks','hotDrinks','cart','orders'])
-  }
- }
-=======
     setOrderType('Food')
     setMenuOptions(['indian','mexican','italian','chinese','american','cart','orders'])
   }else{
@@ -161,7 +133,6 @@ useEffect(()=>{
       },5000)
     }
   }
->>>>>>> master
 
  const handleCameraChange=(topic:string)=>{
   switch(topic){
@@ -193,8 +164,6 @@ useEffect(()=>{
       setHoldingVisible(true)
       break
     }
-<<<<<<< HEAD
-=======
     case 'Music':{
       setCameraPosition([0.5,1.95,17.8])
       setCameraRotaion([-2.24,1,2.3])
@@ -203,7 +172,6 @@ useEffect(()=>{
       setHoldingPosition([0.4,2,18])
       break
     }
->>>>>>> master
     case 'Assets':{
       setCameraPosition([-8,2,16.5])
       setCameraRotaion([-0.1,-0.4,0])
@@ -226,25 +194,13 @@ useEffect(()=>{
   return (
     
      <div className=' h-screen w-full'>
-<<<<<<< HEAD
-=======
       <input ref={inputRef} className=' hidden' accept='audio/*' type="file" onChange={(e)=>handleFileUpload(e)} />
->>>>>>> master
       {!isMobile?<Canvas className=' h-full w-full bg-gray-400 '>
         <Suspense fallback={<Loader />} >
-        {/* <OrbitControls /> */}
         <CameraControl cameraPosition={cameraPosition} cameraRotation={cameraRotation} cameraLookAt={cameraLookAt} />
         <ambientLight />
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
           <Holding handleShowTab={handleMenu} holdingVisible={holdingVisible} handleCameraChange={handleCameraChange} cameraPlacing={cameraPlacing} holdingPosition={holdingPosition}/>
-<<<<<<< HEAD
-          {showMenu && <Menu handleShowTab={handleMenu} baseOpt={baseMenuOpt as "indian" | "chinese" | "italian" | "mexican" | "american" | "cart" | "drinks"} menuPosition={menuPosition} menuOptions={menuOptions} />}
-          {cameraPlacing==='Assets' && <AssetCard handleCameraChange={handleCameraChange}/>}
-          {cameraPlacing==='About' && <About handleCameraChange={handleCameraChange}/>}
-          <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
-          <Boat scale={1.2} position={[-10,-1,2]}/>
-          <Island />
-=======
           {showMenu && <Menu handleShowTab={handleMenu} baseOpt={baseMenuOpt as "indian" | "chinese" | "italian" | "mexican" | "american" | "cart" | "drinks"} menuPosition={menuPosition} menuOptions={menuOptions} lookAtKitchen={lookAtKitchen} />}
           {cameraPlacing==='Assets' && <AssetCard handleCameraChange={handleCameraChange}/>}
           {cameraPlacing==='About' && <About handleCameraChange={handleCameraChange}/>}
@@ -255,7 +211,6 @@ useEffect(()=>{
           <Island />
           <Radio handlePlay={handlePlayClick} handlePause={handlePause} audioStatus={audioStatus} />
           <Pan />
->>>>>>> master
           </Suspense>
       </Canvas>:<div className=' h-full w-full flex flex-col items-center justify-center py-4 px-4 bg-black text-white text-base font-medium'>
         <label className=' text-3xl font-semibold'>Mission Failed Sucessfully</label>
@@ -270,10 +225,7 @@ useEffect(()=>{
             I truly appreciate your time and effort. Thanks a lot, and adios!
           </div> 
         </div>}
-<<<<<<< HEAD
-=======
         <audio ref={audioRef} style={{ display: "none" }} />
->>>>>>> master
      </div>
     
   )
