@@ -14,9 +14,9 @@ function About({handleCameraChange}:AboutType) {
         break
       }
       case 'gmail':{
-        const email = 'kedard249.kd@gmail.com'; // Replace with your email
-        const subject = 'Lets Connect'; // Optional: Replace with your desired subject
-        const body = 'Hii Kedar'; // Optional: Replace with your desired body content
+        const email = 'kedard249.kd@gmail.com'; 
+        const subject = "Let's Connect"; 
+        const body = 'Hi Kedar'; 
         const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer');
         break

@@ -17,7 +17,6 @@ import type { foodItemType } from './types.tsx'
 import { usePlaceOrder } from './state/zustand.tsx'
 import { Plate } from './models/Plate.tsx'
 import { Glass } from './models/Glass.tsx'
-import { Frame } from './models/Frame.tsx'
 
 function App() {
  const [cameraPosition,setCameraPosition]=useState<[number,number,number]>([4.3,1,-1.4])
@@ -206,7 +205,6 @@ useEffect(()=>{
           {cameraPlacing==='Assets' && <AssetCard handleCameraChange={handleCameraChange}/>}
           {cameraPlacing==='About' && <About handleCameraChange={handleCameraChange}/>}
           {totalOrders.length>0 && <><Glass /><Plate /></> }
-          <Frame />
           <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
           <Boat scale={1.2} position={[-10,-1,2]}/>
           <Island />
