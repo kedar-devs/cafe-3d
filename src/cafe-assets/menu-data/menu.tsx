@@ -9,9 +9,10 @@ type menuType={
   baseOpt:'indian'|'chinese'|'italian'|'mexican'|'american'|'cart'|'drinks'
   menuPosition:[number,number,number]
   menuOptions:string[],
-  handleShowTab:(value:string)=>void
+  handleShowTab:(value:string)=>void,
+  lookAtKitchen:()=>void
 }
-function Menu({baseOpt,menuPosition,menuOptions,handleShowTab}:menuType) {
+function Menu({baseOpt,menuPosition,menuOptions,handleShowTab,lookAtKitchen}:menuType) {
   const [selectedOption,setSelectedOption]=useState<'indian'|'chinese'|'italian'|'mexican'|'american'|'cart'|'drinks'|'orders'>('indian')
   const [loading,setLoading]=useState<boolean>(true)
   const [foodItems,setFoodItems]=useState<foodItemType[]>(allFoodItems)
@@ -83,7 +84,9 @@ function Menu({baseOpt,menuPosition,menuOptions,handleShowTab}:menuType) {
     setPlacedOrder(newItems)
     setCurrentPlacedOrder(newItems)
     setOrderedItem([])
+    setFoodItems(allFoodItems)
     setSelectedOption('orders')
+    lookAtKitchen()
     // handleShowTab('food')
   }
   const cancelOrder=()=>{

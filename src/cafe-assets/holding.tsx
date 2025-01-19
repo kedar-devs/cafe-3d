@@ -3,7 +3,7 @@ import { Html } from "@react-three/drei"
 type holdingType={
     handleCameraChange:(topic:string)=>void
     handleShowTab:(value:string)=>void
-    cameraPlacing:'Inside Cafe'|'Outside'|'Drinks'|'Assets'|'About',
+    cameraPlacing:'Inside Cafe'|'Outside'|'Drinks'|'Assets'|'About'|'Music',
     holdingPosition:[number,number,number];
     holdingVisible:boolean;
     
@@ -23,11 +23,19 @@ function Holding({handleCameraChange,cameraPlacing,holdingPosition,holdingVisibl
         <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Leave')}}>Leave</button>
         <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleShowTab('indian')}}>Order Food</button>
         <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Drink')}}>Drinks</button>
+        <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Music')}}>Play Music</button>
     </div>}
     {cameraPlacing==='Drinks' &&  <div className="bg-black bg-opacity-50 rounded-lg flex flex-col gap-y-2 py-4 px-8">
         <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Leave')}}>Leave</button>
         <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Enter')}}>Food</button>
         <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleShowTab('beverages')}}>Order Drinks</button>
+        <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Music')}}>Play Music</button>
+    </div>}
+    {cameraPlacing==='Music' &&  <div className="bg-black bg-opacity-50 rounded-lg flex flex-col gap-y-2 py-4 px-8">
+        <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Leave')}}>Leave</button>
+        <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Enter')}}>Food</button>
+        <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Drink')}}>Drinks</button>
+        
     </div>}
     {cameraPlacing==='Assets' &&  <div className="bg-black bg-opacity-50 rounded-lg flex flex-col gap-y-2 py-4 px-8">
         <button className={`w-28 text-white py-2 border rounded-lg font-medium`} onClick={()=>{handleCameraChange('Leave')}}>Leave</button>
