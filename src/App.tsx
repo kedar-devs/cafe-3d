@@ -4,7 +4,6 @@ import { CafeMisti } from './models/Cafe-misti.tsx'
 import { BeachRock } from './models/Beach_rock.tsx'
 import { Boat } from './models/Boat.tsx'
 import CameraControl from './camera/camera.tsx'
-import { OrbitControls } from '@react-three/drei'
 import Holding from './cafe-assets/holding.tsx'
 import { Suspense, useEffect, useState } from 'react'
 import Menu from './cafe-assets/menu-data/menu.tsx'
@@ -198,7 +197,6 @@ useEffect(()=>{
       <input ref={inputRef} className=' hidden' accept='audio/*' type="file" onChange={(e)=>handleFileUpload(e)} />
       {!isMobile?<Canvas className=' h-full w-full bg-gray-400 '>
         <Suspense fallback={<Loader />} >
-        {/* <OrbitControls /> */}
         <CameraControl cameraPosition={cameraPosition} cameraRotation={cameraRotation} cameraLookAt={cameraLookAt} />
         <ambientLight />
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
