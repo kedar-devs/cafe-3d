@@ -24,4 +24,4 @@ export function BeachRock(props:BeachRockType) {
   )
 }
 
-useGLTF.preload('/beach_rock.glb')
+useGLTF.preload('/cafe-3d/beach_rock.glb')
