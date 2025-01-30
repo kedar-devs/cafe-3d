@@ -32,4 +32,4 @@ export function Pan() {
   )
 }
 
-useGLTF.preload('/pan.glb')
+useGLTF.preload('/cafe-3d/pan.glb')
