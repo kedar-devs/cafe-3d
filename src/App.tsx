@@ -32,13 +32,16 @@ function App() {
  const [menuPosition,setMenuPosition]=useState<[number,number,number]>([-2.5,3,14])
  const [menuOptions,setMenuOptions]=useState<string[]>([])
  const [isMobile,setIsMobile]=useState(false)
- const [audioStatus,setAudioStatus]=useState<'Pause'|'Play'>('Pause')
+ const [audioStatus,setAudioStatus]=useState<'Pause'|'Play'>('Play')
  const inputRef=useRef<HTMLInputElement|null>(null)
   const audioRef=useRef<HTMLAudioElement|null>(null)
   const placedOrders=usePlaceOrder(state=>state.placedOrder)
  
 
 useEffect(()=>{
+  if(audioRef.current){
+    audioRef.current.src='/cafe-3d/default_cafe_music.mp3'
+  }
   const checkScreenSize = () => {
     setIsMobile(window.innerWidth < 1068);
   };
@@ -225,7 +228,7 @@ useEffect(()=>{
             I truly appreciate your time and effort. Thanks a lot, and adios!
           </div> 
         </div>}
-        <audio ref={audioRef} style={{ display: "none" }} />
+        <audio ref={audioRef} style={{ display: "none" }}  />
      </div>
     
   )
