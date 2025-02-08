@@ -23,7 +23,7 @@ function About({handleCameraChange}:AboutType) {
       }
       case 'resume':
         {
-          const fileUrl='/Resume.pdf'
+          const fileUrl='/cafe-3d/Resume.pdf'
           const fileName='KedarDevasthali.pdf'
           const link=document.createElement('a')
           link.href=fileUrl
