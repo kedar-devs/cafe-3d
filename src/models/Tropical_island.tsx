@@ -109,4 +109,4 @@ export function Island() {
   )
 }
 
-useGLTF.preload('/tropical_island.glb')
+useGLTF.preload('/cafe-3d/tropical_island.glb')

@@ -21,4 +21,4 @@ export function Plate() {
   )
 }
 
-useGLTF.preload('/plate.glb')
+useGLTF.preload('/cafe-3d/plate.glb')

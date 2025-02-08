@@ -38,4 +38,4 @@ export function Radio({handlePlay,handlePause,audioStatus}:RadioType) {
   )
 }
 
-useGLTF.preload('/radio.glb')
+useGLTF.preload('/cafe-3d/radio.glb')

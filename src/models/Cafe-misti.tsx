@@ -74,4 +74,4 @@ export function CafeMisti(props:cafeMistiProp) {
   )
 }
 
-useGLTF.preload('/cafe-misti.glb')
+useGLTF.preload('/cafe-3d/cafe-misti.glb')

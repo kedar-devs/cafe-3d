@@ -21,4 +21,4 @@ export function Glass() {
   )
 }
 
-useGLTF.preload('/glass.glb')
+useGLTF.preload('/cafe-3d/glass.glb')

@@ -22,4 +22,4 @@ export function Boat(props:boatType) {
   )
 }
 
-useGLTF.preload('/boat_josefa.glb')
+useGLTF.preload('/cafe-3d/boat_josefa.glb')
