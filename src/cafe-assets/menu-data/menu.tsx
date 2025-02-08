@@ -80,6 +80,7 @@ function Menu({baseOpt,menuPosition,menuOptions,handleShowTab,lookAtKitchen}:men
   }
   const placeOrder=()=>{
     const placedOrder=usePlaceOrder.getState().placedOrder
+    if(orderedItem.length>0){
     const newItems=[...placedOrder,...orderedItem]
     setPlacedOrder(newItems)
     setCurrentPlacedOrder(newItems)
@@ -87,6 +88,7 @@ function Menu({baseOpt,menuPosition,menuOptions,handleShowTab,lookAtKitchen}:men
     setFoodItems(allFoodItems)
     setSelectedOption('orders')
     lookAtKitchen()
+    }
     // handleShowTab('food')
   }
   const cancelOrder=()=>{

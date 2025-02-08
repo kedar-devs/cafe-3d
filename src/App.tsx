@@ -118,6 +118,9 @@ useEffect(()=>{
         setCameraLookAt([0,0,0])
         setShowMenu(false)
         setHoldingVisible(true)
+        if(audioRef.current){
+          audioRef.current.src='/cafe-3d/default_cafe_music.mp3'
+        }
       },5000)
     }else{
       setCameraPosition([-1.5,2.5,19])
@@ -133,6 +136,9 @@ useEffect(()=>{
         setCameraLookAt([-1.5,2.2,18.5])
         setShowMenu(false)
         setHoldingVisible(true)
+        if(audioRef.current){
+          audioRef.current.src='/cafe-3d/default_cafe_music.mp3'
+        }
       },5000)
     }
   }
