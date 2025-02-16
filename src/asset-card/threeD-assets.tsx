@@ -20,5 +20,14 @@ export const threeDAssets=[
         name:'Rock',
         link:'https://sketchfab.com/3d-models/beach-rock-78eb621907b24b4e9ccbade93b7738a4',
         imgSrc:'/cafe-3d/rock.png'
+    },
+    {
+        name:"Radio",
+        link:'https://sketchfab.com/3d-models/soviet-radio-quartz-404-c4bd6f3748b04a8da7c81be5733f9c77',
+        imgSrc:'/cafe-3d/radio.png'
+    },{
+        name:"Soup",
+        link:'https://sketchfab.com/3d-models/bowl-with-soup-de4ecf2c5040488ab98d214a0d9362cc',
+        imgSrc:'/cafe-3d/soup.png'
     }
 ]

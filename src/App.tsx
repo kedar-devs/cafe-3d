@@ -15,9 +15,7 @@ import { useRef,type ChangeEvent } from 'react'
 import { Pan } from './models/Pan.tsx'
 import type { foodItemType } from './types.tsx'
 import { usePlaceOrder } from './state/zustand.tsx'
-import { Plate } from './models/Plate.tsx'
 import { Glass } from './models/Glass.tsx'
-import { OrbitControls } from '@react-three/drei'
 import { Soup } from './models/Soup.tsx'
 
 function App() {
@@ -208,7 +206,6 @@ useEffect(()=>{
       <input ref={inputRef} className=' hidden' accept='audio/*' type="file" onChange={(e)=>handleFileUpload(e)} />
       {!isMobile?<Canvas className=' h-full w-full bg-gray-400 '>
         <Suspense fallback={<Loader />} >
-        <OrbitControls ></OrbitControls>
         <CameraControl cameraPosition={cameraPosition} cameraRotation={cameraRotation} cameraLookAt={cameraLookAt} />
         <ambientLight />
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
