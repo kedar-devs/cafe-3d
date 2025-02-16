@@ -17,6 +17,8 @@ import type { foodItemType } from './types.tsx'
 import { usePlaceOrder } from './state/zustand.tsx'
 import { Plate } from './models/Plate.tsx'
 import { Glass } from './models/Glass.tsx'
+import { OrbitControls } from '@react-three/drei'
+import { Soup } from './models/Soup.tsx'
 
 function App() {
  const [cameraPosition,setCameraPosition]=useState<[number,number,number]>([4.3,1,-1.4])
@@ -206,6 +208,7 @@ useEffect(()=>{
       <input ref={inputRef} className=' hidden' accept='audio/*' type="file" onChange={(e)=>handleFileUpload(e)} />
       {!isMobile?<Canvas className=' h-full w-full bg-gray-400 '>
         <Suspense fallback={<Loader />} >
+        <OrbitControls ></OrbitControls>
         <CameraControl cameraPosition={cameraPosition} cameraRotation={cameraRotation} cameraLookAt={cameraLookAt} />
         <ambientLight />
           <CafeMisti scale={0.8} position={[0,1,20]} rotation={[0,Math.PI/2,0]}  />
@@ -213,7 +216,7 @@ useEffect(()=>{
           {showMenu && <Menu handleShowTab={handleMenu} baseOpt={baseMenuOpt as "indian" | "chinese" | "italian" | "mexican" | "american" | "cart" | "drinks"} menuPosition={menuPosition} menuOptions={menuOptions} lookAtKitchen={lookAtKitchen} />}
           {cameraPlacing==='Assets' && <AssetCard handleCameraChange={handleCameraChange}/>}
           {cameraPlacing==='About' && <About handleCameraChange={handleCameraChange}/>}
-          {totalOrders.length>0 && <><Glass /><Plate /></> }
+          {totalOrders.length>0 && <><Glass /><Soup /></> }
           
           <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
           <Boat scale={1.2} position={[-10,-1,2]}/>
