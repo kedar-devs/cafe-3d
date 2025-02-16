@@ -14,16 +14,16 @@ function About({handleCameraChange}:AboutType) {
         break
       }
       case 'gmail':{
-        const email = 'kedard249.kd@gmail.com'; // Replace with your email
-        const subject = 'Lets Connect'; // Optional: Replace with your desired subject
-        const body = 'Hii Kedar'; // Optional: Replace with your desired body content
+        const email = 'kedard249.kd@gmail.com'; 
+        const subject = "Let's Connect"; 
+        const body = 'Hi Kedar'; 
         const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(gmailComposeUrl, '_blank', 'noopener,noreferrer');
         break
       }
       case 'resume':
         {
-          const fileUrl='/Resume.pdf'
+          const fileUrl='/cafe-3d/Resume.pdf'
           const fileName='KedarDevasthali.pdf'
           const link=document.createElement('a')
           link.href=fileUrl

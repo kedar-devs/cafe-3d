@@ -3,7 +3,7 @@ import {CirclesWithBar} from 'react-loader-spinner'
 function Loader() {
     const {progress}=useProgress()
   return (
-    <Html className=" w-[100vw] h-[100vh] bg-black text-white flex flex-col items-center justify-center " center>
+    <Html className=" w-[100vw] h-[100vh] bg-black text-white flex flex-col items-center justify-center gap-y-6" center>
         <label className=" text-3xl font-semibold">Loading....</label>
         <CirclesWithBar
             height="100"

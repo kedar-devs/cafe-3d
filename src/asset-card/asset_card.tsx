@@ -8,8 +8,9 @@ type AssetType={
 function AssetCard({handleCameraChange}:AssetType) {
   return (
     <Html className="w-[65vw] h-[75vh]  bg-black bg-opacity-65 px-8 py-8 rounded-lg  text-white" position={[-10,4,12]}>
-        <div className="w-full h-[90%] grid grid-cols-3 overflow-y-scroll scroll-container gap-y-2">
+        <div className="w-full h-[90%] grid grid-cols-3 overflow-y-scroll scroll-container gap-y-2 ">
         {threeDAssets.map((ele)=>(
+          <div className=" col-span-1 flex justify-center items-center">
             <div className=" w-48 h-48 rounded-lg border border-white flex flex-col py-2 justify-center items-center ">
                 <div className=" h-2/5 w-full justify-center items-center rounded-lg">
                     <img src={ele.imgSrc} className=" w-full h-full  aspect-square object-contain rounded-lg" />
@@ -18,6 +19,7 @@ function AssetCard({handleCameraChange}:AssetType) {
                 <label className=" font-semibold mt-2 text-lg">{ele.name}</label>
                 <a className=" text-blue-500 font-semibold flex gap-x-1 text-sm" href={ele.link} target="_blank">Link</a>
                 </div>
+            </div>
             </div>
         ))}
         </div>

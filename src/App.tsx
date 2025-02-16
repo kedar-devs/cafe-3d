@@ -214,7 +214,6 @@ useEffect(()=>{
           {cameraPlacing==='Assets' && <AssetCard handleCameraChange={handleCameraChange}/>}
           {cameraPlacing==='About' && <About handleCameraChange={handleCameraChange}/>}
           {totalOrders.length>0 && <><Glass /><Soup /></> }
-          
           <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
           <Boat scale={1.2} position={[-10,-1,2]}/>
           <Island />

@@ -80,14 +80,14 @@ function Menu({baseOpt,menuPosition,menuOptions,handleShowTab,lookAtKitchen}:men
   }
   const placeOrder=()=>{
     const placedOrder=usePlaceOrder.getState().placedOrder
-    if(orderedItem.length>0){
     const newItems=[...placedOrder,...orderedItem]
-    setPlacedOrder(newItems)
-    setCurrentPlacedOrder(newItems)
-    setOrderedItem([])
-    setFoodItems(allFoodItems)
-    setSelectedOption('orders')
-    lookAtKitchen()
+    if(orderedItem.length>0){
+      setPlacedOrder(newItems)
+      setCurrentPlacedOrder(newItems)
+      setOrderedItem([])
+      setFoodItems(allFoodItems)
+      setSelectedOption('orders')
+      lookAtKitchen()
     }
     // handleShowTab('food')
   }

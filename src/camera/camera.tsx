@@ -19,7 +19,7 @@ function CameraControl({cameraPosition,cameraRotation,cameraLookAt}:cameraType) 
         // targetLookAtRef.current.set(...cameraLookAt)
     },[...cameraPosition,...cameraRotation,...cameraLookAt])
     useFrame(() => {
-        camera.position.lerp(targetPosRef.current, 0.02);
+        camera.position.lerp(targetPosRef.current, 0.015);
         camera.lookAt(...cameraLookAt)
         // camera.lookAt(-3,3,20)
 
