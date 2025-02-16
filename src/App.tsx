@@ -15,8 +15,8 @@ import { useRef,type ChangeEvent } from 'react'
 import { Pan } from './models/Pan.tsx'
 import type { foodItemType } from './types.tsx'
 import { usePlaceOrder } from './state/zustand.tsx'
-import { Plate } from './models/Plate.tsx'
 import { Glass } from './models/Glass.tsx'
+import { Soup } from './models/Soup.tsx'
 
 function App() {
  const [cameraPosition,setCameraPosition]=useState<[number,number,number]>([4.3,1,-1.4])
@@ -213,7 +213,7 @@ useEffect(()=>{
           {showMenu && <Menu handleShowTab={handleMenu} baseOpt={baseMenuOpt as "indian" | "chinese" | "italian" | "mexican" | "american" | "cart" | "drinks"} menuPosition={menuPosition} menuOptions={menuOptions} lookAtKitchen={lookAtKitchen} />}
           {cameraPlacing==='Assets' && <AssetCard handleCameraChange={handleCameraChange}/>}
           {cameraPlacing==='About' && <About handleCameraChange={handleCameraChange}/>}
-          {totalOrders.length>0 && <><Glass /><Plate /></> }
+          {totalOrders.length>0 && <><Glass /><Soup /></> }
           <BeachRock scale={16} position={[4,-3,13]} rotation={[0,Math.PI/2,0]} />
           <Boat scale={1.2} position={[-10,-1,2]}/>
           <Island />
